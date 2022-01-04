@@ -141,10 +141,16 @@ SILOImport <- function(station, path, startdate, enddate) {
   # extract on just the dates
   if (missing(startdate)) {
     startdate <- min(x,na.rm = TRUE)
+  }else
+  {
+    startdate <- as.Date(startdate)
   }
   
   if (missing(enddate)) {
     enddate <- max(x,na.rm = TRUE)
+  }else
+  {
+    enddate <- as.Date(enddate)
   }
   
   tsd <- stats::window(tsd, start = as.Date(startdate), end = as.Date(enddate))
@@ -218,10 +224,10 @@ SILOQualityCodes<-function(SILO,filename=NULL)
                                "Nearby station, data from BoM",
                                "Deaccumulated using nearby station",
                                "Deaccumulated using interpolated data",
-                               "interpolated from daily observations using anomaly interpolation method",
+                               "interpolated from daily observations\nusing anomaly interpolation method",
                                "interpolated daily observations",
                                "interpolated long term average",
-                               "synthetic pan evaporation"))
+                               "Derived using data from other climate variables"))
   
   #colours to shade codes, green to red
   cols<-rev(RColorBrewer::brewer.pal(7,"RdYlGn"))
@@ -255,9 +261,11 @@ SILOQualityCodes<-function(SILO,filename=NULL)
     ggplot2::ylab("Station")+
     ggplot2::xlab("Date")+
     ggplot2::theme(legend.position = "top") + 
-    ggplot2::guides(fill = ggplot2::guide_legend(nrow = length(unique(my.data$Code)))) 
+   # ggplot2::guides(fill = ggplot2::guide_legend(nrow = length(unique(my.data$Code))))  + 
+    ggplot2::guides(fill = ggplot2::guide_legend(ncol=2))  + 
+    ggplot2::theme(text = ggplot2::element_text(size = 10)) 
   
-  if(!is.null(filename))  ggplot2::ggsave(filename,p,width=15,height=15,units="cm")
+  if(!is.null(filename))  ggplot2::ggsave(filename,p,width=19,height=12,units="cm",compression="lzw",dpi = 1000)
   return(p)
   
 }
@@ -314,6 +322,7 @@ SILOCumulativeDeviation<-function(SILO,filename=NULL,cols=pkg.env$cols)
 #' \item{AnnualRainfall}{Mean annual rainfall in mm}
 #' \item{Latitute}{Latitude}
 #' \item{Longitude}{Longitude}
+#' \item{Elevation}{Elevation}
 #' }
 #' 
 #' @examples
@@ -324,17 +333,18 @@ SILOCumulativeDeviation<-function(SILO,filename=NULL,cols=pkg.env$cols)
 #' 
 #' @export
 
-SILOSiteSummary<-function(SILO)
+SILOSiteSummary<-function (SILO) 
 {
-  X<-data.frame(Site=sapply(SILO,function(x) x$Site),
-                Station=sapply(SILO,function(x) x$Station),
-                StartDate=as.Date(sapply(SILO,function(x) x$start),origin="1970-01-01"),
-                EndDate=as.Date(sapply(SILO,function(x) x$end),origin="1970-01-01"),
-                PctMissing=round(sapply(SILO,function(x) x$missing),digits = 2),
-                AnnualRainfall=round(sapply(SILO,function(x) mean(x$tsd$Rain)*365.25),digits = 0),
-                Latitude=sapply(SILO,function(x) x$Lat),
-                Longitude=sapply(SILO,function(x) x$Lon))
-  
+  X <- data.frame(Site = sapply(SILO, function(x) x$Site), 
+                  Station = sapply(SILO, function(x) x$Station), 
+                  StartDate = as.Date(sapply(SILO,function(x) min(zoo::index(x$tsd)[x$tsd$Srn==0])),origin="1970-01-01"), 
+                  EndDate = as.Date(sapply(SILO, function(x) max(zoo::index(x$tsd)[x$tsd$Srn==0])),origin="1970-01-01"), 
+                  PctMissing = round(sapply(SILO, function(x) x$missing), 
+                                     digits = 2), AnnualRainfall = round(sapply(SILO, 
+                                                                                function(x) mean(x$tsd$Rain) * 365.25), digits = 0), 
+                  Latitude = sapply(SILO, function(x) x$Lat), Longitude = sapply(SILO, 
+                                                                                 function(x) x$Lon),
+                  Elevation = sapply(SILO, function(x) x$Elevation))
   return(X)
 }
 
@@ -476,7 +486,7 @@ SILOReport<-function(SILO,filename,path=getwd(),cols=pkg.env$cols)
     stop("You need to specify more colours for the number of sites, use the cols= argument")
   }
   file<-system.file("SILOReport.Rmd", package="SWTools")
-  rmarkdown::render(file,output_file = paste0(path,"/",filename))
+  rmarkdown::render(file,output_file = filename,output_dir=path)
 }
 #' Plot a boxplot of monthly rainfall with mean monthly evaporation
 #'

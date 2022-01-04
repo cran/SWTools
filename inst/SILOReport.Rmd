@@ -11,37 +11,48 @@ output:
 
 Generated using the R SWTools package.
 
-#Station Summary
+# Station Summary
+
 ```{r echo=FALSE}
 SILOSiteSummary(SILO)
 ```
 
-##Data quality codes
-```{r echo=FALSE}
-SILOQualityCodes(SILO)
+\newpage
 
-SILOMortonQualityCodes(SILO)
-```
+# Map of station locations
 
-##Map of station locations
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 SILOMap(SILO)
 ```
 
-##Monthly Rainfall
+\newpage
+
+# Monthly Rainfall
+
 Monthly rainfall at each station as boxplots and the mean monthly evaporation as a line.
 ```{r echo=FALSE}
 SILOMonthlyRainfall(SILO,cols=cols)
 ```
 
-##Cumulative deviation in mean daily rainfall
+\newpage
+
+# Data quality codes
+
 ```{r echo=FALSE}
-SILOCumulativeDeviation(SILO,cols=cols)
+SILOQualityCodes(SILO)
 ```
 
-##Double mass plots
+\newpage
+
 ```{r echo=FALSE}
-plots<-SILODoubleMass(SILO)
-for(i in 1:length(plots)) print(plots[[i]])
+SILOMortonQualityCodes(SILO)
+```
+
+\newpage
+
+# Homogeneity tests
+
+```{r echo=FALSE}
+SILOCheckConsistency(SILO)
 ```
 
