@@ -33,7 +33,7 @@
 #' @return If folder is not specified (or \code{NA}) the plots are shown in the R environment. If folder is specified, a figure for each station in \code{X} is saved to \code{folder}. There are 4 panels on the figure:
 #' \itemize{
 #' \item{}{Annual rainfall for a given station, against the average across all stations in \code{X} (except the station presented).}
-#' \item{}{Cumulative residuals of the annual rainfall from the straight line regression shown in the first pannel. Assuming the residuals are are independent random variables, this figure include ellipses representing 80th and 95th percentile that the hypothesis that there is no change in slope can be rejected.}
+#' \item{}{Cumulative residuals of the annual rainfall from the straight line regression shown in the first panel. Assuming the residuals are are independent random variables, this figure include ellipses representing 80th and 95th percentile that the hypothesis that there is no change in slope can be rejected.}
 #' \item{}{double mass curve, plotting the cumulative annual rainfall for the station against the station average. If a breakpoint is identified, this is displayed on the plot.The colours represent the median quality code for each year, with the same colour palette as \code{\link[SWTools]{SILOQualityCodes}}}
 #' \item{}{Residuals of the cumulative rainfall from the straight line fitted to the double mass curve.}
 #' } 
@@ -56,7 +56,10 @@ lookup <- data.frame(Code = c(0, 23, 13, 15, 35, 25, 75,
                                                "Deaccumulated using interpolated data", "interpolated from daily observations\nusing anomaly interpolation method", 
                                                "interpolated daily observations", "interpolated long term average", 
                                                "synthetic pan evaporation"))
-colcode <- rev(RColorBrewer::brewer.pal(7, "RdYlGn"))
+
+#colours to shade codes, green to red, derived from
+#rev(RColorBrewer::brewer.pal(7,"RdYlGn"))
+colcode<-c("#1A9850", "#91CF60", "#D9EF8B", "#FFFFBF", "#FEE08B", "#FC8D59", "#D73027")
 colcode<-tibble::tibble(cols=c(colcode, colcode[1]),code=lookup$Code)
 
 #extract the rainfall data
