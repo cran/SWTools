@@ -1,13 +1,13 @@
-c93eec7393f1c9129491c84d56828700 *DESCRIPTION
+045b4bde4df0903a8681eb1b3eb99410 *DESCRIPTION
 54f220394271cd5ae0fe5808b3edc7e4 *NAMESPACE
-e763458663a511617c507d93db3ebce8 *NEWS.md
+95eb4fc3b18c1e6d094d8191cc7302fb *NEWS.md
 3cb14c6bb48be87d049267a0c3ff1cf7 *R/DEWAquarius.R
 59162ca55df88baf6391a1592fab7cd8 *R/SILO.R
 12f0fb984bbcf8a6bbb0b2953856c965 *R/SILOCheckConsistency.R
 ccbd7b0c3bfc8bdd765288df47a4dc41 *R/SILOCorrectSite.R
-9d46e1913f64408ced6259ba8b9942cd *R/SILOFindSitesByShapefile.R
+e82c7235afc2577436e44e8506fc5060 *R/SILOFindSitesByShapefile.R
 1993b8ded3e92d2a5e555a4e1f8a830c *R/SILOMorton.R
-e14b0f50f22eecb6c9d6b8f16ba7b47b *R/SILOThiessenShp.R
+d2100b75944cbeaaf6116fac608cbdfc *R/SILOThiessenShp.R
 bbca4613cc5981c3c8f0a517b33255c3 *R/SILOWriteforSource.R
 614f4f82155a5da257a82bccf8f86e56 *R/SWTools.R
 8fe7e70cc5bb65c776ab935c9b8c748b *R/Veneer.R
@@ -21,7 +21,7 @@ d95145c9f8f8f54f200c3fb31e4f8893 *inst/extdata/24002.txt
 e3012189e135776c24c9832997a2e0e7 *inst/style.docx
 7567242d1b0cae3576a81ee177db7eff *man/AQWPDownload.Rd
 b4af426c0d6845afaed72a981bea7c82 *man/AQWPLoad.Rd
-09ad380a1d8eed8331c7f1290bed3061 *man/SILOCheckConsistency.Rd
+2e879b693b8776dc1f39fd1b15b7f08b *man/SILOCheckConsistency.Rd
 7c8c97b93919307b517001a34095182e *man/SILOCorrectSite.Rd
 c89827abad9fb6151d699b90a35588a9 *man/SILOCumulativeDeviation.Rd
 db3ad02d2440c6ec19ccb1907f1faa7a *man/SILODoubleMass.Rd
@@ -35,7 +35,7 @@ a090e32897ed3800a53a8aea1240f066 *man/SILOLoad.Rd
 2736bbf6863dd51e1223ee2d4aa08188 *man/SILOReport.Rd
 dfe290d2aec47440e7931b974d0e8b28 *man/SILOSiteSummary.Rd
 1178493f0432aa62a3227167167e8a92 *man/SILOSitesfromPolygon.Rd
-c03e63036ca2adf955d4839bd950e34a *man/SILOThiessenShp.Rd
+d1768ce0cf1f7b033f0ba1cd8eb69db8 *man/SILOThiessenShp.Rd
 087ab4af92c38d10599f8736b4a7c28c *man/SILOWriteforSource.Rd
 72e15b1fd6c9f0bff54abe4a88c2928c *man/SWTools.Rd
 6761ab68061bef76c012792de859586c *man/VeneerGetInputSets.Rd
@@ -50,4 +50,4 @@ c95dc40a4a1c5e91900d7a40fc6924eb *man/VeneerGetTSbyVariable.Rd
 45745e68c9b68a0fde05254dc398d2d7 *man/VeneerSetPiecewise.Rd
 218eba684b8c92c441d061a2a7902667 *man/VeneerlatestRunNumber.Rd
 47c53e43ceca0cf3392de009d9904547 *man/WritepwtoIS.Rd
-d09fbe9f7bc20e76ab0135e414238a25 *man/read_res.csv.Rd
+63a08c34d098c2b2c7d200b6f7650235 *man/read_res.csv.Rd
