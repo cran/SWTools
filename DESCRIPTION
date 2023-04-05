@@ -1,7 +1,7 @@
 Package: SWTools
 Type: Package
 Title: Helper Tools for Australian Hydrologists
-Version: 0.2.4
+Version: 0.2.5
 Authors@R: person("Matt", "Gibbs", email = "gibbs.ms@gmail.com",
     role = c("aut", "cre"))
 Author: Matt Gibbs [aut, cre]
@@ -16,8 +16,8 @@ Encoding: UTF-8
 Imports: httr, zoo, dplyr, tidyr, readr, tibble, forcats, stringr,
         rlang, rmarkdown, reshape2, ggplot2, ggmap, magrittr, hydroTSM,
         jsonlite, sf, sp, lubridate, segmented
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3
 NeedsCompilation: no
-Packaged: 2022-07-04 02:30:57 UTC; gib417
+Packaged: 2023-04-05 23:25:57 UTC; gib417
 Repository: CRAN
-Date/Publication: 2022-07-04 06:20:02 UTC
+Date/Publication: 2023-04-05 23:43:19 UTC

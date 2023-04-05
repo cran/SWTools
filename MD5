@@ -1,12 +1,12 @@
-53a528894200640bb8297523846762ca *DESCRIPTION
+cb63cde1a11ec65d0d93f30c259d0eaf *DESCRIPTION
 e34dcd1cc3202a8017554a7b516ebcd4 *NAMESPACE
-cb9b37b66845e34c8c5e386ab18dc821 *NEWS.md
-3cb14c6bb48be87d049267a0c3ff1cf7 *R/DEWAquarius.R
+6144bc428dab8451d3bc89bdd31f2971 *NEWS.md
+fdff7b2509935e6e5ee6350a8a0e0016 *R/DEWAquarius.R
 80c0518122fec459e0d82b0dd5f32564 *R/SILO.R
 12f0fb984bbcf8a6bbb0b2953856c965 *R/SILOCheckConsistency.R
-ccbd7b0c3bfc8bdd765288df47a4dc41 *R/SILOCorrectSite.R
+6df9b763acfd768b860345bd7b9cd504 *R/SILOCorrectSite.R
 913111ae11ee673157946e24bb0e30e9 *R/SILOFindSitesByShapefile.R
-d387cc1505997a84d45e1b1d317ecd56 *R/SILOMorton.R
+c1a526524ab7161fec294444c1f67880 *R/SILOMorton.R
 76fcab20d61aafc5ccc12bc3bc91c304 *R/SILOThiessenShp.R
 e00c176fa8c91d488f271378ec6c3b15 *R/SILOWriteFunctionsforSource.R
 bbca4613cc5981c3c8f0a517b33255c3 *R/SILOWriteforSource.R
@@ -20,7 +20,7 @@ d95145c9f8f8f54f200c3fb31e4f8893 *inst/extdata/24002.txt
 574b110c41f5cc6670d19cf1ca15aea8 *inst/extdata/24003.txt
 28688878ed192bc551bd40ee7634e552 *inst/extdata/Scenario1.res.csv
 e3012189e135776c24c9832997a2e0e7 *inst/style.docx
-7567242d1b0cae3576a81ee177db7eff *man/AQWPDownload.Rd
+c729805bf7e335968b9030e0fd483a81 *man/AQWPDownload.Rd
 b4af426c0d6845afaed72a981bea7c82 *man/AQWPLoad.Rd
 2e879b693b8776dc1f39fd1b15b7f08b *man/SILOCheckConsistency.Rd
 7c8c97b93919307b517001a34095182e *man/SILOCorrectSite.Rd
